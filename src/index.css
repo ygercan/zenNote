@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  --color-paper: #fcfcfc;
+  --color-ink: #1a1a1a;
+  --color-ink-light: #525252;
+}
+
+.dark {
+  --color-paper: #171717;
+  --color-ink: #e5e5e5;
+  --color-ink-light: #a3a3a3;
+}
+
+/* Custom Scrollbar Hiding */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Show scrollbar on hover/active */
+.show-scrollbar-on-interaction:hover {
+  scrollbar-width: thin;
+}
+
+.show-scrollbar-on-interaction:hover::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+.show-scrollbar-on-interaction::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dark .show-scrollbar-on-interaction::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: var(--font-poppins);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
